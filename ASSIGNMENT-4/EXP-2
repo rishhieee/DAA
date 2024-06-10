@@ -1,0 +1,24 @@
+def wordsWithinTwoEdits(queries, dictionary):
+    def edit_distance(word1, word2):
+        distance = 0
+        for c1, c2 in zip(word1, word2):
+            if c1 != c2:
+                distance += 1
+        return distance
+
+    result = []
+    for query in queries:
+        for word in dictionary:
+            if edit_distance(query, word) <= 2:
+                result.append(query)
+                break
+    return result
+
+
+queries =  ["yes"]
+dictionary = ["not"] 
+
+print(wordsWithinTwoEdits(queries, dictionary))  
+queries = ["yes"]
+dictionary = ["not"]
+print(wordsWithinTwoEdits(queries, dictionary))  
