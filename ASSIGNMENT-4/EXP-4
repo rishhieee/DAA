@@ -1,0 +1,20 @@
+def nextGreaterElements(nums):
+    stack = []
+    result = [-1] * len(nums)
+
+    for i in range(len(nums) - 1, -1, -1):
+        while stack and nums[i] >= nums[stack[-1]]:
+            stack.pop()
+
+        if stack:
+            result[i] = nums[stack[-1]]
+
+        stack.append(i)
+
+    return result
+
+
+nums1 = [2, 4, 0, 9, 6]
+nums2 = [3, 3]
+print(nextGreaterElements(nums1))  
+print(nextGreaterElements(nums2))  
