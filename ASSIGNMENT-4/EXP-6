@@ -1,0 +1,13 @@
+def sortArrayByMovingItemsToEmptySpace(nums):
+    n = len(nums)
+    empty_space = nums.index(0)
+    count = 0
+    for i in range(1, n):
+        if nums[(i + empty_space) % n] != i:
+            count += 1
+            nums[(i + empty_space) % n], nums[(empty_space + 1) % n] = nums[(empty_space + 1) % n], nums[(i + empty_space) % n]
+            empty_space = (empty_space + 1) % n
+    return count
+
+
+print(sortArrayByMovingItemsToEmptySpace([1,2,3,4,0]))  
