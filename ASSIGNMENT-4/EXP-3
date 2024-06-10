@@ -1,0 +1,21 @@
+def destroyTargets(nums, space):
+    num_mod = {}
+    for num in nums:
+        mod = num % space
+        if mod not in num_mod:
+            num_mod[mod] = [num]
+        else:
+            num_mod[mod].append(num)
+    max_len = 0
+    res = float('inf')
+    for mod in num_mod:
+        if len(num_mod[mod]) > max_len:
+            max_len = len(num_mod[mod])
+            res = min(num_mod[mod])
+        elif len(num_mod[mod]) == max_len:
+            res = min(res, min(num_mod[mod]))
+    return res
+
+print(destroyTargets([3,7,8,1,1,5], 2))  
+print(destroyTargets([1,3,5,2,4,6], 2))  
+print(destroyTargets([6,2,5], 100))  
