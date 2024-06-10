@@ -1,0 +1,8 @@
+def oddString(words):
+    diff = [ord(words[0][i+1]) - ord(words[0][i]) for i in range(len(words[0])-1)]
+    for word in words[1:]:
+        if [ord(word[i+1]) - ord(word[i]) for i in range(len(word)-1)] != diff:
+            return word
+    return ""
+words = ["aaa","bob","ccc","ddd"] 
+print(oddString(words)) 
