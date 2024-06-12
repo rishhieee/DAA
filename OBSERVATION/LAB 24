@@ -9,6 +9,6 @@ def lastStringBeforeEmptying(s):
             return s
         s = new_s
 
-# Example usage:
+
 s = "aabcbbca"
-print(lastStringBeforeEmptying(s))  # Output: "ba"
+print(lastStringBeforeEmptying(s))  
