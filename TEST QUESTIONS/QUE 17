@@ -1,0 +1,27 @@
+def setZeroes(matrix):
+    m = len(matrix)
+    n = len(matrix[0]) if m > 0 else 0
+
+    zero_rows = set()
+    zero_cols = set()
+
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] == 0:
+                zero_rows.add(i)
+                zero_cols.add(j)
+
+    for row in zero_rows:
+        for j in range(n):
+            matrix[row][j] = 0
+
+    for col in zero_cols:
+        for i in range(m):
+            matrix[i][col] = 0
+matrix = [
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 1]
+]
+setZeroes(matrix)
+print(matrix)  
