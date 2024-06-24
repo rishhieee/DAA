@@ -1,0 +1,14 @@
+def minRepeats(a, b):
+    rep = 1
+    repeated_a = a
+    while len(repeated_a) < len(b):
+        repeated_a += a
+        rep += 1
+    if b in repeated_a:
+        return rep
+    if b in repeated_a + a:
+        return rep + 1
+    return -1
+a = "abcd"
+b = "cdabcdab"
+print(minRepeats(a, b))  
