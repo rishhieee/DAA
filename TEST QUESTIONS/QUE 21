@@ -1,0 +1,43 @@
+def countGoodStrings(n, s1, s2, evil):
+    MOD = 10**9 + 7
+    
+    def count_valid_strings(prefix, s1, s2):
+       
+        count = 0
+        for ch in range(ord(s1), ord(s2) + 1):
+            if chr(ch) >= prefix:
+                count += 1
+        return count
+    
+    def has_evil_substring(prefix, evil):
+      
+        m, n = len(prefix), len(evil)
+        for i in range(m - n + 1):
+            if prefix[i:i + n] == evil:
+                return True
+        return False
+    
+    total_good_strings = 0
+ 
+    for i in range(n):
+        prefix = s1[:i]  
+        start_char = s1[i] if i < len(s1) else 'a'
+        end_char = s2[i] if i < len(s2) else 'z'
+        
+        
+        valid_strings_count = count_valid_strings(prefix + start_char, start_char, end_char)
+        
+        if i == n - 1:
+            total_good_strings += valid_strings_count
+        else:
+            total_good_strings += valid_strings_count * (26 ** (n - i - 1))
+    
+        if has_evil_substring(prefix + start_char, evil):
+            break
+    
+    return total_good_strings % MOD
+n = 2
+s1 = "aa"
+s2 = "da"
+evil = "b"
+print(countGoodStrings(n, s1, s2, evil))  
