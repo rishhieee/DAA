@@ -1,0 +1,9 @@
+def countWordsWithPrefix(words, pref):
+    count = sum(word.startswith(pref) for word in words)
+    return count
+words = ["pay", "attention", "practice", "attend"]
+pref = "at"
+print(countWordsWithPrefix(words, pref))  
+words2 = ["apple", "application", "april", "bat", "cat"]
+pref2 = "app"
+print(countWordsWithPrefix(words2, pref2))  
