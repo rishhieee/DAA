@@ -1,0 +1,11 @@
+def missingNumber(nums):
+    n = len(nums)
+    xor_sum = n  
+    for i in range(n):
+        xor_sum ^= i ^ nums[i]
+    return xor_sum
+nums1 = [3, 0, 1]
+print(missingNumber(nums1))  
+
+nums2 = [9, 6, 4, 2, 3, 5, 7, 0, 1]
+print(missingNumber(nums2))  
