@@ -1,0 +1,17 @@
+def wiggleSort(nums):
+    nums.sort()  
+    mid = (len(nums) + 1) // 2
+    left = nums[:mid]  
+    right = nums[mid:]  
+
+    nums[::2] = left[::-1] 
+    nums[1::2] = right[::-1]  
+
+
+nums1 = [1, 5, 1, 1, 6, 4]
+wiggleSort(nums1)
+print(nums1) 
+
+nums2 = [1, 3, 2, 2, 3, 1]
+wiggleSort(nums2)
+print(nums2)  
