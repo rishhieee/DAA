@@ -1,0 +1,30 @@
+from bisect import bisect_right
+from collections import defaultdict
+
+def makeArrayIncreasing(arr1, arr2):
+    arr2 = sorted(set(arr2))  
+    n = len(arr1)
+    
+  
+    dp = { -float('inf'): 0 }
+
+    for num in arr1:
+        new_dp = defaultdict(lambda: float('inf'))
+        for prev, ops in dp.items():
+            if num > prev: 
+                new_dp[num] = min(new_dp[num], ops)
+           
+            idx = bisect_right(arr2, prev)
+            if idx < len(arr2):
+                new_dp[arr2[idx]] = min(new_dp[arr2[idx]], ops + 1)
+        
+        dp = new_dp  
+    
+    if dp:
+        return min(dp.values())
+    else:
+        return -1
+
+arr1 = [1, 5, 3, 6, 7]
+arr2 = [1, 3, 2, 4]
+print(makeArrayIncreasing(arr1, arr2)) 
