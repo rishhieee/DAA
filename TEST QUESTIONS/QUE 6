@@ -1,0 +1,44 @@
+import heapq
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+def mergeKLists(lists):
+    dummy = ListNode(0)
+    curr = dummy
+    heap = []
+    for i in range(len(lists)):
+        if lists[i]:
+            heapq.heappush(heap, (lists[i].val, i))
+            lists[i] = lists[i].next
+    while heap:
+        val, i = heapq.heappop(heap)
+        curr.next = ListNode(val)
+        curr = curr.next
+        if lists[i]:
+            heapq.heappush(heap, (lists[i].val, i))
+            lists[i] = lists[i].next
+    return dummy.next
+
+def printList(node):
+    while node:
+        print(node.val, end=" ")
+        node = node.next
+    print()
+list1 = ListNode(1)
+list1.next = ListNode(4)
+list1.next.next = ListNode(5)
+
+list2 = ListNode(1)
+list2.next = ListNode(3)
+list2.next.next = ListNode(4)
+
+list3 = ListNode(2)
+list3.next = ListNode(6)
+
+lists = [list1, list2, list3]
+
+mergedList = mergeKLists(lists)
+
+printList(mergedList)
