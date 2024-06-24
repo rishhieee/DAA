@@ -1,0 +1,44 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def sortList(head):
+    if not head or not head.next:
+        return head
+
+    def getMiddle(node):
+        slow, fast = node, node.next
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
+
+    def merge(left, right):
+        dummy = ListNode()
+        tail = dummy
+        while left and right:
+            if left.val < right.val:
+                tail.next = left
+                left = left.next
+            else:
+                tail.next = right
+                right = right.next
+            tail = tail.next
+        tail.next = left or right
+        return dummy.next
+
+    middle = getMiddle(head)
+    right_head = middle.next
+    middle.next = None
+    left = sortList(head)
+    right = sortList(right_head)
+    return merge(left, right)
+def printList(head):
+    while head:
+        print(head.val, end=' ')
+        head = head.next
+    print()
+head = ListNode(4, ListNode(2, ListNode(1, ListNode(3))))
+sorted_head = sortList(head)
+printList(sorted_head)  
