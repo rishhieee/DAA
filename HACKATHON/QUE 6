@@ -1,0 +1,11 @@
+def sort_and_find_max(arr):
+    if not arr:
+        return "List is empty"
+    arr.sort()
+    return arr[-1]
+input1 = []
+input2 = [5]
+input3 = [3, 3, 3, 3, 3]
+print(sort_and_find_max(input1))  
+print(sort_and_find_max(input2))  
+print(sort_and_find_max(input3))  
