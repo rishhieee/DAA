@@ -1,0 +1,10 @@
+def find_maximum(arr):
+    if not arr:
+        return None
+    return max(arr)
+input1 = [1, 2, 3, 4, 5]
+input2 = [7, 7, 7, 7, 7]
+input3 = [-10, 2, 3, -4, 5]
+print(find_maximum(input1))  
+print(find_maximum(input2))  
+print(find_maximum(input3))  
