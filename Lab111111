@@ -1,0 +1,118 @@
+GITBASH DOWNLOAD LINK :-  https://github.com/git-for-windows/git/releases/download/v2.47.1.windows.1/Git-2.47.1-64-bit.exe 
+
+
+
+ DOCKER DOWNLOAD LINK  :-  https://docs.docker.com/desktop/setup/install/windows-install/
+
+
+
+FIGMA DOWNLOAD LINK  :-  https://www.figma.com/downloads/ 
+
+
+
+Jira application link  :-  https://id.atlassian.com/
+
+
+
+
+
+
+
+DOCKER
+
+ 
+
+index.html
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Static Website</title>
+
+</head>
+
+<body>
+
+    <h1>Welcome to My Static Website</h1>
+
+    <p>This is a simple website served using Docker and Nginx.</p>
+
+</body>
+
+</html>
+
+ For docker
+
+# Use the official Nginx image from Docker Hub
+
+FROM nginx:alpine
+
+# Copy the index.html file into the Nginx default public directory
+
+COPY index.html /usr/share/nginx/html/
+
+# Expose port 80 to allow external access to the website
+
+EXPOSE 80
+
+# Run Nginx in the foreground (default command for the Nginx container)
+
+CMD ["nginx", "-g", "daemon off;"]
+
+
+
+FIGMA IMAGES:-
+
+
+
+
+
+
+
+GITHUB/GITBASH:-
+
+ 
+
+
+
+ 
+
+
+
+LIBRARIES MANAGEMENT SYSTEM using excel/google sheets    :-
+
+
+
+Requirement	Category	Justification
+
+Search books by title and author	Must-Have	Core functionality for easy access to books. Critical for user experience.
+
+Online book reservation system	Must-Have	Essential for enabling users to reserve books, improving accessibility and usability.
+
+Generate monthly reports on borrowed books	Should-Have	Important for administrators but not essential for day-to-day user operations.
+
+Email notifications for overdue books	Must-Have	Crucial for reminding users to return books on time, which improves book availability and user accountability.
+
+QR code scanning for borrowing and returning books	Could-Have	A nice-to-have feature for added convenience and speed, but not critical for basic functionality.
+
+User-friendly dashboard for librarians	Must-Have	A central feature to help librarians manage operations effectively, improving system efficiency.
+
+Users can review and rate books	Should-Have	Useful for enhancing user interaction with books, but not essential for core functionality.
+
+Integrate a chatbot for user assistance	Could-Have	Enhances user support and interaction, but could be considered non-essential depending on budget and resources.
+
+Develop a mobile app version of the system	Should-Have	Expands accessibility but could be developed later, depending on budget and user needs.
+
+Multi-language support	Could-Have	Adds inclusivity but can be implemented later as per need or resources.
+
+
+
+ 
+
